@@ -15,13 +15,13 @@ module Refinery
 
       def create(page:)
         config.connection.post(pages_path) do |req|
-          req.body = page.to_json
+          req.body = {page: page}.to_json
         end
       end
 
       def update(id:, page:)
-        config.connection.put(pages_path(id)) do |req|
-          req.body = page.to_json
+        config.connection.patch(pages_path(id)) do |req|
+          req.body = {page: page}.to_json
         end
       end
 

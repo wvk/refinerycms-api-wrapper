@@ -7,7 +7,11 @@ module Refinery
         end
 
         def api_path
-          Refinery::API.configuration.api_path
+          if Refinery::API.configuration.locale
+            [Refinery::API.configuration.locale, Refinery::API.configuration.api_path].join '/'
+          else
+            Refinery::API.configuration.api_path
+          end
         end
       end
     end

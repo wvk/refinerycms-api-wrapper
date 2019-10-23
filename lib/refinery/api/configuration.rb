@@ -4,11 +4,12 @@ require "faraday_middleware"
 module Refinery
   module API
     class Configuration
-      attr_accessor :api_token, :api_url, :api_path
+      attr_accessor :api_token, :api_url, :api_path, :locale
 
       def initialize
         @api_token = ""
         @api_url = ""
+        @locale = nil
         @api_path = "/api"
       end
 

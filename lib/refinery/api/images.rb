@@ -13,6 +13,10 @@ module Refinery
         config.connection.get(images_path(id))
       end
 
+      def head(id:)
+        config.connection.head(images_path(id))
+      end
+
       def create(image:)
         config.connection.post(images_path, image)
       end
